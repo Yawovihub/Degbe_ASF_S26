@@ -1,0 +1,85 @@
+
+.dancing-script-head {
+                     font-family: "Dancing Script", cursive;
+                     font-optical-sizing: auto;
+                     font-weight:  bold;
+                     font-style: normal;
+
+                 }
+.menu_table1{
+    color: white;
+    background-color: lightbrown;
+    font-weight: bold;
+    font-family: "Dancing Script";
+    font-size: x-large;
+}
+.menu_table2{
+    color: white;
+    background-color: lightbrown;
+    font-weight: bold;
+    font-family: "Dancing Script";
+    font-size: x-large;
+}
+/*Reset*/
+  *{
+     margin: 1px;
+     padding: 1px;
+     box-sizing: border-box;
+ }
+ /* Base Styles*/
+.home_body{
+    background-image: url("images/img3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100vw 100vh;
+}
+.menu_body{
+    background-image: url("images/img4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100vw 100vh;
+}
+a {
+    color: darkgoldenrod;
+    background-color: transparent;
+    font-weight: bold;
+    font-family: "Dancing Script";
+    font-size: xx-large;
+}
+/* unvisited link */
+a:link {
+    color: darkgoldenrod;
+}
+
+/* visited link */
+a:visited {
+    color: goldenrod;
+}
+
+/* mouse over link */
+a:hover {
+    color: darkolivegreen;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+.title {
+    border-radius: 10px;
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-family: "Dancing Script";
+    color: darkgoldenrod;
+}
+.description{
+    font-family: "Dancing Script";
+    font-size: xx-large;
+    color: darkgoldenrod;
+}
+table {
+    border-collapse: separate;
+}

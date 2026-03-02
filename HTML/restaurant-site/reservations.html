@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <title>Reservations</title>
+</head>
+<body class="reservation_body">
+    <div>
+        <nav class="card">
+            <ul class="menu_nav_list">
+                <a href="menu.html" class="nav_list" target=_blank>
+                    Menu
+                </a>
+                <a href="index.html" class="nav_list" target=_blank>
+                    Home
+                </a>
+                <a href="reservations.html" class="nav_list">
+                    Reservations
+                </a>
+            </ul>
+        </nav>
+    </div>
+<p>
+    We take reservations by requests only!
+</p>
+    <form action="/submit" method="POST" enctype="...">
+        <fieldset>
+            <legend>Personal info</legend>
+            <label>
+                Email:
+                <input type="text" name="name" placeholder="Name" max="20" required>
+            </label>
+            <label>
+                Password:
+                <input type="password" name="password">
+            </label>
+            <label>
+                Email:
+                <input type="email" name="email" placeholder="email" required>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend> Party Infos</legend>
+            <label>
+                Party Size:
+                <select name="Party_Size">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </label>
+            <legend>Date of reservation</legend>
+            <label>
+                Date:
+                <input type="date" name="Date" placeholder="Date">
+            </label>
+            <legend>Time of reservation</legend>
+            <label>
+                Time:
+                <input type="time" name="Time" placeholder="Time">
+            </label>
+            <legend> Seating Preference</legend>
+            <label for="Indoor">
+                <input type="radio" id="html" name="seating_preference" value="Indoor"> Indoor
+            </label>
+            <label for="Outdoor">
+                <input type="radio" id="html" name="seating_preference" value="Outdoor"> Outdoor
+            </label>
+            <label for="Bar chair">
+                <input type="radio" id="html" name="seating_preference" value="Bar chair"> Bar Chairs
+            </label>
+        </fieldset>
+        <label>
+            Newsletter:
+            <input type="checkbox" name="Newsletter" value="yes"> Opt-In
+        </label>
+        <fieldset>
+            <label>
+                Dietary notes:
+                <textarea name="DietaryNotes" rows="4" cols="40" maxlength="30" ></textarea>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend> Choose:</legend>
+            <button type="submit">Submit</button>
+            <button type="reset">Clear</button>
+        </fieldset>
+    </form>
+</body>
+</html>
