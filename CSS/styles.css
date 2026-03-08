@@ -1,0 +1,110 @@
+
+.dancing-script-head {  /*Google font used*/
+     font-family: "Dancing Script", cursive;
+     font-optical-sizing: auto;
+     font-weight:  bold;
+     font-style: normal;
+}
+.menu_table1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    color: black;
+    background-color: transparent;
+    font-weight: bold;
+    font-family: "Dancing Script";
+    font-size: xx-large;
+    border-style: zebra striping;
+}
+caption {
+    color: darkgoldenrod;
+}
+ /* Base Styles*/
+.menu_body{
+    background-color: whitesmoke;
+    cursor: url("images/img3.png"), auto;/*Font awesome icon used as a cursor on webpage*/
+}
+a {
+    color: darkgoldenrod;
+    background-color: transparent;
+    font-weight: bold;
+    font-family: "Dancing Script";
+    font-size: xx-large;
+}
+/* unvisited link */
+a:link {
+    color: darkgoldenrod;
+}
+
+/* visited link */
+a:visited {
+    color: goldenrod;
+}
+
+/* mouse over link */
+a:hover {
+    color: darkolivegreen;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+.title {
+    border-radius: 10px;
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: black;
+    font-family: "Dancing Script";
+    color: darkgoldenrod; /*the dark golden color for the coffee bar reminds of milk chocolate color*/
+}
+.description{
+    font-family: "Dancing Script";
+    font-size: xx-large;
+}
+
+.reservation_body{
+    font-family: "Dancing Script";
+    font-size: 30px;
+    cursor: url("images/img3.png"), auto; /*Font awesome icon used as a cursor on webpage*/
+}
+.menu_p{
+    border-radius: 10px;
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: black;
+    color:darkgoldenrod;/*the dark golden color for the coffee bar reminds of milk chocolate color*/
+    font-size: 30px;
+}
+.reservation_p{
+    border-radius: 10px;
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: black;
+    color:darkgoldenrod; /*the dark golden color for the coffee bar reminds of milk chocolate color*/
+}
+.card{
+    background:auto;
+    padding:0;
+    border:transparent;
+    shadow:revert-layer;
+   width: 50%;
+}
+.fa-cutlery {      /*font awesome styling in menu page*/
+    color: #ff4500;       /* Change icon color */
+    font-size: 3rem;      /* Change icon size */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Add shadow */
+    transition: transform 0.3s ease; /* For smooth hover effects */
+}
+.fa-utensils {      /*font awesome styling in menu page*/
+    color: #ff4500;       /* Change icon color */
+    font-size: 3rem;      /* Change icon size */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Add shadow */
+    transition: transform 0.3s ease; /* For smooth hover effects */
+}
