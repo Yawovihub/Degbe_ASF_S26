@@ -7,53 +7,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/dd276a9d5b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Degbe_ASF_S26/CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
 
 </head>
 <body class="reservation_body">
-    <div>
-        <header class="reservation_header">
-        <img src="Degbe_ASF_S26/images/logo.png" alt="logo" width="60">
-        <nav class="card">
-            <ul class="reservation_nav_list">
-                <a href="Degbe_ASF_S26/HTML/reservations.html" class="nav_list">
-                    Reservations
-                </a>
-                <a href="Degbe_ASF_S26/HTML/menu.html" class="nav_list" >
-                    Menu
-                </a>
-                <a href="Degbe_ASF_S26/HTML/index.html" class="nav_list" >
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../images/logo.png" alt="logo" width="60">
+            <a class="navbar-brand" href="#">
+                Coffee Haven
+            </a>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <a class="navbar-brand" href="index.html" >
                     Home
                 </a>
+                <a class="navbar-brand" href="menu.html"  >
+                    Menu
+                </a>
+                <a class="navbar-brand" href="reservations.html" >
+                    Reservations
+                </a>
             </ul>
-        </nav>
-        </header>
+        </div>
     </div>
+</nav>
 <p class="reservation_p">
     We take reservations by requests only!
 </p>
-    <form action="/submit" method="POST">
+    <form id="reservationForm" action="/submit" method="POST">
+        <div id="alertContainer"></div>
         <fieldset>
             <legend>Personal infos:</legend>
             <label>
                 Name:
-                <input type="name" name="name" placeholder="Name" max="20" required>
+                <input type="text" id="name" name="name" placeholder="Name" maxlength="20" required>
             </label>
             <label>
                 Email:
-                <input type="email" name="email" placeholder="Email" max="20" required>
+                <input type="email" id="Email" name="Email" placeholder="Email"  required>
             </label>
             <label>
                 Password:
-                <input type="password" name="password">
+                <input type="password" id="password" name="password">
             </label>
         </fieldset>
         <fieldset>
-            <legend> Party Infos:</legend>
+            <legend> Party Size:</legend>
             <label>
-                Party Size:
-                <select name="Party_Size">
+                <select id="Party_Size" name="Party_Size" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -64,35 +73,41 @@
                     <option value="8">8</option>
                 </select>
             </label>
-            <legend>Date of reservation:</legend>
+        </fieldset>
+        <fieldset>
+            <legend>Reservation Date:</legend>
             <label>
-                Date:
-                <input type="date" name="Date" placeholder="Date" required>
-            </label>
-            <legend>Reservation's Time:</legend>
-            <label>
-                Time:
-                <input type="time" name="Time" placeholder="Time" required>
-            </label>
-            <legend> Seating Preferences:</legend>
-            <label for="Indoor">
-                <input type="radio" id="html" name="seating_preference" value="Indoor"> Indoor
-            </label>
-            <label for="Outdoor">
-                <input type="radio" id="html" name="seating_preference" value="Outdoor"> Outdoor
-            </label>
-            <label for="Bar chair">
-                <input type="radio" id="html" name="seating_preference" value="Bar chair"> Bar Chairs
+                <input type="date" id="Date" name="Date"  placeholder="Date" required>
             </label>
         </fieldset>
+        <fieldset>
+            <legend>Reservation's Time:</legend>
+            <label>
+                <input type="time" id="Time" name="Time" placeholder="Time" required>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend> Seating Preferences:</legend>
+            <label>
+                <input type="radio" name="seating_preference" value="Indoor" required> Indoor
+            </label>
+            <label>
+                <input type="radio" name="seating_preference" value="Outdoor" required> Outdoor
+            </label>
+            <label>
+                <input type="radio" name="seating_preference" value="Bar chair" required> Bar Chairs
+            </label>
+        </fieldset>
+        <fieldset>
         <label>
             Newsletter:
-            <input type="checkbox" name="Newsletter" value="yes"> Opt-In
+            <input type="checkbox" id="Newsletter" name="Newsletter" value="yes"> Opt-In
         </label>
+        </fieldset>
         <fieldset>
             <label>
                 Dietary notes:
-                <textarea name="DietaryNotes" rows="4" cols="40" maxlength="30" ></textarea>
+                <textarea id="DietaryNotes" name="DietaryNotes" rows="4" cols="40" maxlength="30" ></textarea>
             </label>
         </fieldset>
         <fieldset>
@@ -100,5 +115,11 @@
             <button type="reset">Clear</button>
         </fieldset>
     </form>
+    <div id="reservationResult" class="mt-4" style="display: none;">
+        <h3>Reservation Details</h3>
+        <p id="resultContent"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../script/script.js"></script>
 </body>
 </html>

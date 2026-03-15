@@ -7,74 +7,64 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/dd276a9d5b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Degbe_ASF_S26/CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/styles.css">
 </head>
 <body class="menu_body">
         <header class="menu_header">
-            <div class="menu_header_content">
-                <img src="Degbe_ASF_S26/images/logo.png" alt="logo" width="60">
-                <nav class="card">
-                    <ul class="menu_nav_list">
-                        <a href="Degbe_ASF_S26/HTML/menu.html" class="nav_list" >
-                            Menu
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="../images/logo.png" alt="logo" width="60">
+                        <a class="navbar-brand" href="#">
+                            Coffee Haven
                         </a>
-                        <a href="Degbe_ASF_S26/HTML/index.html" class="nav_list" >
-                            Home
-                        </a>
-                        <a href="Degbe_ASF_S26/HTML/reservations.html" class="nav_list" >
-                            Reservations
-                        </a>
-                    </ul>
-                </nav>
-            </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <a class="navbar-brand" href="index.html" >
+                                Home
+                            </a>
+                            <a class="navbar-brand" href="menu.html"  >
+                                Menu
+                            </a>
+                            <a class="navbar-brand" href="reservations.html"  >
+                                Reservations
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
             <p class="menu_p">
                 This is our MENU!!
             </p>
             <div>
-                <img src="Degbe_ASF_S26/images/img2.jpg" alt="menu picture" width="200">
+                <img src="../images/img2.jpg" alt="logo" width="200">
             </div>
         </header>
         <i class="fa-sharp fa-solid fa-cutlery"></i>
         <i class="fa-sharp fa-solid fa-utensils"></i>
-        <table class="menu_table1">
+        <table class="table table-dark" id="myTable">
             <caption>Heavenly Brews</caption>
            <thead>
                 <tr>
-                    <th>Items</th>
-                    <th>Price</th>
-                    <th>Calories</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Calories</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Category</th>
                 </tr>
            </thead>
-            <tbody>
-            <tr>
-                <td>Expresso/Americano</td>
-                <td>$4.50</td>
-                <td>60Cal</td>
-            <tr>  <td>Latte/Capuccino</td>
-                <td>$6.00</td>
-                <td>60Cal</td> </tr>
-            <tr>   <td>Cloud Macchiato(Signature)</td>
-                <td>$7.50</td>
-                <td>60Cal</td>  </tr>
-            <tr>  <td>Iced Golden Latte</td>
-                <td>$7.00</td>
-                <td>60Cal</td> </tr>
-            <tr>    <td>Cold Brew</td>
-                <td>$5.50</td>
-                <td>60Cal</td>
-            </tr>
-            <tr>
-                <td>Spain Croissant</td>
-                <td>$7.99</td>
-                <td>250Cal</td>
-            </tr>
-            <tr>
-                <td>Cafe Sho</td>
-                <td>$7.99</td>
-                <td>160Cal</td>
-            </tr>
+            <tbody id="tableBody">
+
             </tbody>
         </table>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="../script/script.js"></script>
 </body>
 </html>

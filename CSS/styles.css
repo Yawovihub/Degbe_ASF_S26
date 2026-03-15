@@ -10,25 +10,23 @@
     margin-right: auto;
     width: 50%;
     color: black;
-    background-color: transparent;
     font-weight: bold;
-    font-family: "Dancing Script";
+    font-family: "Dancing Script", serif;
     font-size: xx-large;
-    border-style: zebra striping;
+    border-style: dashed;
 }
 caption {
     color: darkgoldenrod;
 }
  /* Base Styles*/
 .menu_body{
-    background-color: whitesmoke;
+    background-color: #cab994;
     cursor: url("images/img3.png"), auto;/*Font awesome icon used as a cursor on webpage*/
 }
 a {
     color: darkgoldenrod;
-    background-color: transparent;
     font-weight: bold;
-    font-family: "Dancing Script";
+    font-family: "Dancing Script", sans-serif;
     font-size: xx-large;
 }
 /* unvisited link */
@@ -57,18 +55,22 @@ a:active {
     padding: 10px;
     box-sizing: border-box;
     background-color: black;
-    font-family: "Dancing Script";
+    font-family: "Dancing Script", serif;
     color: darkgoldenrod; /*the dark golden color for the coffee bar reminds of milk chocolate color*/
 }
 .description{
-    font-family: "Dancing Script";
+    font-family: "Dancing Script", serif;
     font-size: xx-large;
 }
 
 .reservation_body{
-    font-family: "Dancing Script";
+    background-color: #cab994;
+    font-family: "Dancing Script", serif;
     font-size: 30px;
-    cursor: url("images/img3.png"), auto; /*Font awesome icon used as a cursor on webpage*/
+    cursor: url("../images/img3.png"), auto; /*Font awesome icon used as a cursor on webpage*/
+}
+.home_body{
+    background-color: #cab994;
 }
 .menu_p{
     border-radius: 10px;
@@ -90,10 +92,9 @@ a:active {
     color:darkgoldenrod; /*the dark golden color for the coffee bar reminds of milk chocolate color*/
 }
 .card{
-    background:auto;
+    background-color:transparent;
     padding:0;
     border:transparent;
-    shadow:revert-layer;
    width: 50%;
 }
 .fa-cutlery {      /*font awesome styling in menu page*/
