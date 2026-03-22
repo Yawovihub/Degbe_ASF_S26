@@ -5,18 +5,18 @@
      font-weight:  bold;
      font-style: normal;
 }
-.menu_table1{
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    color: black;
-    font-weight: bold;
+.menu_table1, .menu_table1 th, .menu_table1 td {
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*width: 50%;*/
+    color: darkgoldenrod !important;
+    font-weight: lighter;
     font-family: "Dancing Script", serif;
-    font-size: xx-large;
-    border-style: dashed;
+    font-size: x-large;
+    border-style: inherit;
 }
 caption {
-    color: darkgoldenrod;
+    color: black;
 }
  /* Base Styles*/
 .menu_body{
@@ -28,6 +28,12 @@ a {
     font-weight: bold;
     font-family: "Dancing Script", sans-serif;
     font-size: xx-large;
+}
+.a_menu {
+    color: darkgoldenrod;
+    font-weight: bold;
+    font-family: "Dancing Script", sans-serif;
+    font-size: x-large;
 }
 /* unvisited link */
 a:link {
@@ -91,12 +97,6 @@ a:active {
     background-color: black;
     color:darkgoldenrod; /*the dark golden color for the coffee bar reminds of milk chocolate color*/
 }
-.card{
-    background-color:transparent;
-    padding:0;
-    border:transparent;
-   width: 50%;
-}
 .fa-cutlery {      /*font awesome styling in menu page*/
     color: #ff4500;       /* Change icon color */
     font-size: 3rem;      /* Change icon size */
@@ -108,4 +108,14 @@ a:active {
     font-size: 3rem;      /* Change icon size */
     text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Add shadow */
     transition: transform 0.3s ease; /* For smooth hover effects */
+}
+#cart-count {
+    font-size: 0.7rem;
+    vertical-align: top;
+    margin-left: -5px;
+    padding: 0.35em 0.65em;
+}
+/* Make the cart icon and text look clickable */
+.nav-link i {
+    margin-right: 5px;
 }
