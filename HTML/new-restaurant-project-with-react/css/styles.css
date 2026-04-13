@@ -1,0 +1,127 @@
+ /*--- Global & Google Fonts --- */
+.dancing-script-head {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
+ /*--- Base Styles --- */
+body {
+  background-color: #cab994; /* Warm coffee-toned background */
+  font-family: "Dancing Script", serif;
+}
+
+ /*Links & Navigation */
+/*a {*/
+/*  color: darkgoldenrod;*/
+/*  font-weight: bold;*/
+/*  font-family: "Dancing Script", sans-serif;*/
+/*  !*font-size: 7px; !* Using rem for better scaling *!*!*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*.a_menu {*/
+/*  color: darkgoldenrod;*/
+/*  font-weight: bold;*/
+/*  font-family: "Dancing Script", sans-serif;*/
+/*  font-size: x-large;*/
+/*}*/
+
+a:link { color: darkgoldenrod; }
+a:visited { color: goldenrod; }
+a:hover { color: darkolivegreen; text-decoration: underline; }
+a:active { color: blue; }
+
+/* Custom Cursor*/
+.menu_body, .reservation_body, .home_body, .cart_body{
+  cursor: url("../images/img3.png"), auto;
+}
+
+/*!* --- Components --- *!*/
+
+/* Header Titles (Home, Menu, Reservation headers) */
+.title, .menu_p, .reservation_p {
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px 0;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: black;
+  color: darkgoldenrod;
+  font-family: "Dancing Script", serif;
+}
+
+/*.description {*/
+/*  font-family: "Dancing Script", serif;*/
+/*  font-size: xx-large;*/
+/*  text-align: center;*/
+/*}*/
+
+/* --- Menu Table Styles --- */
+/*.menu_table1 {*/
+/*  color: darkgoldenrod !important;*/
+/*  font-weight: lighter;*/
+/*  font-family: "Dancing Script", serif;*/
+/*  font-size: x-large;*/
+/*  border-style: inherit;*/
+/*  margin-top: 20px;*/
+/*}*/
+
+/*.menu_table1 th, .menu_table1 td {*/
+/*  border-color: #444; !* Darker borders for contrast *!*/
+/*}*/
+
+/*caption {*/
+/*  color: black;*/
+/*  font-weight: bold;*/
+/*  font-size: 1.2rem;*/
+/*}*/
+
+/* --- Cart & Icons --- */
+#cart-count {
+  font-size: 0.7rem;
+  vertical-align: top;
+  margin-left: -5px;
+  padding: 0.35em 0.65em;
+}
+
+/*.nav-link i {*/
+/*  margin-right: 5px;*/
+/*}*/
+
+/* Font Awesome Icon Effects */
+.fa-cutlery, .fa-utensils {
+  color: #ff4500;
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.fa-cutlery:hover, .fa-utensils:hover {
+  transform: scale(1.1);
+}
+
+/*!* --- Reservation Form Styling --- *!*/
+/*#reservationForm fieldset {*/
+/*  border: 1px solid darkgoldenrod;*/
+/*  padding: 15px;*/
+/*  margin-bottom: 20px;*/
+/*  border-radius: 8px;*/
+/*}*/
+
+#reservationForm legend {
+  color: black;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+/* Ensure images don't break layout */
+/*.img-fluid {*/
+/*  border: 3px solid black;*/
+/*  transition: 0.3s;*/
+/*}*/
+
+/*.img-fluid:hover {*/
+/*  box-shadow: 0 8px 16px rgba(0,0,0,0.5);*/
+/*}*/
