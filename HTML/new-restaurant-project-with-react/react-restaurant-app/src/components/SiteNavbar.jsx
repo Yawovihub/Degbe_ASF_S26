@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Badge, Container } from 'reactstrap';
+import {Navbar, NavbarBrand, Nav, NavItem, NavLink, Badge, Container, NavbarToggler, Collapse} from 'reactstrap';
 
 const SiteNavbar = ({ cartCount }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
     <Navbar color="dark" dark expand="md" className="sticky-top">
       <Container>
@@ -10,6 +13,8 @@ const SiteNavbar = ({ cartCount }) => {
           <img src="/images/logo.png" alt="logo" width="80" className="me-2" />
           Coffee Haven
         </NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
         <Nav className="me-auto" navbar>
           <NavItem>
             <NavLink tag={Link} to="/">Home</NavLink>
@@ -33,6 +38,7 @@ const SiteNavbar = ({ cartCount }) => {
             </NavLink>
           </NavItem>
         </Nav>
+        </Collapse>
       </Container>
     </Navbar>
   );

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Container, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { MENU_ITEMS } from '../data/menuData.js';
-import MenuItemCard from '../components/MenuItemCard';
 import MenuFilter from '../components/MenuFilter';
 
 const MenuPage = ({ addToCart }) => {
