@@ -1,0 +1,140 @@
+package com.example.final_capstone_project.Soldier;
+
+import com.example.final_capstone_project.counseling.Counseling;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2026-05-08T11:11:20-0500",
+    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-9.4.1.jar, environment: Java 21.0.9 (Amazon.com Inc.)"
+)
+@Component
+public class SoldierMapperImpl implements SoldierMapper {
+
+    @Override
+    public void updateSoldierFromDto(Soldier dto, Soldier entity) {
+        if ( dto == null ) {
+            return;
+        }
+
+        if ( dto.getId() != null ) {
+            entity.setId( dto.getId() );
+        }
+        if ( dto.getName() != null ) {
+            entity.setName( dto.getName() );
+        }
+        if ( dto.getRank() != null ) {
+            entity.setRank( dto.getRank() );
+        }
+        if ( dto.getPhone() != null ) {
+            entity.setPhone( dto.getPhone() );
+        }
+        if ( dto.getMarital() != null ) {
+            entity.setMarital( dto.getMarital() );
+        }
+        if ( dto.getHousing() != null ) {
+            entity.setHousing( dto.getHousing() );
+        }
+        if ( dto.getProficiency() != null ) {
+            entity.setProficiency( dto.getProficiency() );
+        }
+        if ( dto.getEmail() != null ) {
+            entity.setEmail( dto.getEmail() );
+        }
+        if ( dto.getUnit() != null ) {
+            entity.setUnit( dto.getUnit() );
+        }
+        if ( dto.getSoldier_id() != null ) {
+            entity.setSoldier_id( dto.getSoldier_id() );
+        }
+        if ( dto.getRole() != null ) {
+            entity.setRole( dto.getRole() );
+        }
+        if ( dto.getMos() != null ) {
+            entity.setMos( dto.getMos() );
+        }
+        if ( dto.getAcft_score() != null ) {
+            entity.setAcft_score( dto.getAcft_score() );
+        }
+        if ( dto.getWeapon_score() != null ) {
+            entity.setWeapon_score( dto.getWeapon_score() );
+        }
+        if ( dto.getAcft_date() != null ) {
+            entity.setAcft_date( dto.getAcft_date() );
+        }
+        if ( dto.getWeapon_qual_date() != null ) {
+            entity.setWeapon_qual_date( dto.getWeapon_qual_date() );
+        }
+        if ( dto.getVision_due() != null ) {
+            entity.setVision_due( dto.getVision_due() );
+        }
+        if ( dto.getPha_due() != null ) {
+            entity.setPha_due( dto.getPha_due() );
+        }
+        if ( dto.getDental_due() != null ) {
+            entity.setDental_due( dto.getDental_due() );
+        }
+        if ( dto.getImmunization_due() != null ) {
+            entity.setImmunization_due( dto.getImmunization_due() );
+        }
+        if ( dto.getHearing_due() != null ) {
+            entity.setHearing_due( dto.getHearing_due() );
+        }
+        if ( dto.getHiv_due() != null ) {
+            entity.setHiv_due( dto.getHiv_due() );
+        }
+        if ( dto.getProfile_due() != null ) {
+            entity.setProfile_due( dto.getProfile_due() );
+        }
+        if ( dto.getNext_counseling_due() != null ) {
+            entity.setNext_counseling_due( dto.getNext_counseling_due() );
+        }
+        if ( dto.getBio() != null ) {
+            entity.setBio( dto.getBio() );
+        }
+        if ( dto.getBlood_type() != null ) {
+            entity.setBlood_type( dto.getBlood_type() );
+        }
+        entity.set_married( dto.is_married() );
+        entity.setLives_on_post( dto.isLives_on_post() );
+        if ( dto.getSquad_leader() != null ) {
+            entity.setSquad_leader( dto.getSquad_leader() );
+        }
+        if ( dto.getSquad_leader_phone_number() != null ) {
+            entity.setSquad_leader_phone_number( dto.getSquad_leader_phone_number() );
+        }
+        if ( dto.getPsg() != null ) {
+            entity.setPsg( dto.getPsg() );
+        }
+        if ( dto.getPsg_phone_number() != null ) {
+            entity.setPsg_phone_number( dto.getPsg_phone_number() );
+        }
+        if ( dto.getFirst_sgt() != null ) {
+            entity.setFirst_sgt( dto.getFirst_sgt() );
+        }
+        if ( dto.getFirst_sgt_phone_number() != null ) {
+            entity.setFirst_sgt_phone_number( dto.getFirst_sgt_phone_number() );
+        }
+        byte[] photo = dto.getPhoto();
+        if ( photo != null ) {
+            entity.setPhoto( Arrays.copyOf( photo, photo.length ) );
+        }
+        if ( entity.getCounselingHistory() != null ) {
+            List<Counseling> list = dto.getCounselingHistory();
+            if ( list != null ) {
+                entity.getCounselingHistory().clear();
+                entity.getCounselingHistory().addAll( list );
+            }
+        }
+        else {
+            List<Counseling> list = dto.getCounselingHistory();
+            if ( list != null ) {
+                entity.setCounselingHistory( new ArrayList<Counseling>( list ) );
+            }
+        }
+    }
+}

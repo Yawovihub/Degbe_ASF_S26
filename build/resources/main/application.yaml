@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: final_capstone_project
+  servlet:
+    multipart:
+      max-file-size: 5MB  # Allow larger photo uploads
+      max-request-size: 5MB
+  Jackson:
+        property-naming-strategy: SNAKE_CASE
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+       - org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5430/final_capstone_project
+    username: final_capstone_project
+    password: final_capstone_project11
+
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: update # Auto-create tables based on the Soldier entity
+    show-sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    clean-disabled: true
