@@ -27,6 +27,13 @@ public class SolidierController {
         return soldierRepository.findAll();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Soldier> getSoldierById(@PathVariable Long id) {
+        return soldierRepository.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @PostMapping("/{id}/photo")
     public ResponseEntity<String> uploadPhoto(
             @PathVariable Long id,

@@ -3,6 +3,7 @@ import { Modal, Button, Form } from 'react-bootstrap';
 import axios from 'axios';
 
 const AddCounselingModal = ({ isOpen, onClose, soldierId, onSuccess }) => {
+    const url = `http://localhost:8080/api/soldiers/${soldierId}/counseling`;
     const [counseling, setCounseling] = useState({
         type: 'Event-Oriented',
         counseling_date: new Date().toISOString().split('T')[0]
@@ -11,23 +12,28 @@ const AddCounselingModal = ({ isOpen, onClose, soldierId, onSuccess }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!soldierId) {
-            alert("Error: Soldier ID is missing. Cannot save counseling.");
+            alert("Error: Soldier ID is missing.");
             return;
         }
-        // Use the payload variable you defined to ensure clean data
+
         const payload = {
             type: counseling.type,
             counseling_date: counseling.counseling_date
         };
 
         try {
-            await axios.post(`http://localhost:8080/api/soldiers/${soldierId}/counseling`, payload);
+            console.log("Sending POST to:", url);
+            const response = await axios.post(url, payload);
 
-            onSuccess();
-            onClose();
+            // Check if the server actually returned a 200/201
+            if (response.status === 200 || response.status === 201) {
+                console.log("Save successful, refreshing data...");
+                onSuccess(); // This triggers fetchSoldierData in UserManagement
+                onClose();
+            }
         } catch (error) {
             console.error("Error adding counseling:", error.response?.data || error.message);
-            alert("Failed to add counseling record. Check console for details.");
+            alert("Failed to add counseling record.");
         }
     };
 

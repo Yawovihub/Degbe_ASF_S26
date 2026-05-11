@@ -36,47 +36,45 @@ const UserManagement = () => {
 
     // Fetch soldiers from the backend
 
-    // const fetchSoldiers = async () => {
-    //     setLoading(true);
-    //     setError(null);
-    //     try {
-    //         const response = await axios.get( "http://localhost:8080/api/soldiers");
-    //         setSoldiers(response.data);
-    //         const savedSoldierId = sessionStorage.getItem('selectedSoldierId');
-    //         if (savedSoldierId) {
-    //             const found = response.data.find(s => s.id === parseInt(savedSoldierId));
-    //             if (found) {
-    //                 setSelectedSoldier(found);
-    //             }
-    //         }
-    //     } catch {
-    //         setError('Failed to load soldiers. Please ensure the backend server is running.');
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
     const fetchSoldierData = async () => {
+        // 1. Guard Clause: Don't do anything if no soldier is selected
         if (!selectedSoldier) return;
 
+        // 2. Determine the ID
+        const soldierId = selectedSoldier.id || selectedSoldier.soldier_id || selectedSoldier.soldierId;
+
+        // 3. If ID is still missing, stop here to prevent 405/404 errors
+        if (!soldierId) {
+            console.warn("Refresh aborted: No valid ID found for selected soldier.");
+            return;
+        }
+
         try {
-            const soldierId = selectedSoldier.id || selectedSoldier.soldier_id;
+            // 4. Move the call INSIDE the try block
             const response = await axios.get(`${BACKEND_URL}/${soldierId}`);
 
             if (response.data) {
                 const updatedSoldier = response.data;
+
+                // 5. Handle the photo mapping
                 if (updatedSoldier.photo) {
                     updatedSoldier.photoUrl = `data:image/jpeg;base64,${updatedSoldier.photo}`;
                 }
-                // Sync the updated data to BOTH states
+
+                // 6. Update states
                 setSelectedSoldier(updatedSoldier);
 
-                // Also update the soldier inside the roster list so the 'Back' view is current
-                setSoldiers(prev => prev.map(s => s.id === updatedSoldier.id ? updatedSoldier : s));
+                // 7. Update the roster list so the 'Back' view is current
+                setSoldiers(prev => prev.map(s =>
+                    s.id === updatedSoldier.id ? updatedSoldier : s
+                ));
 
-                console.log("UI Refreshed with new data");
+                console.log("FRESH DATA FROM SERVER:", updatedSoldier.counselingHistory);
+
+                console.log("UI Refreshed with new data for Soldier:", soldierId);
             }
         } catch (error) {
-            console.error("Error refreshing soldier data:", error);
+            console.error("Error refreshing soldier data:", error.response?.data || error.message);
         }
     };
 
@@ -100,32 +98,7 @@ const UserManagement = () => {
         }
 
     };
-    // const handleSave = async (formData) => {
-    //     // 1. Determine if this is a NEW soldier or an EDIT
-    //     // New soldiers from your Modal won't have a database 'id' yet
-    //     const isNewSoldier = !formData.id;
-    //
-    //     try {
-    //         if (isNewSoldier) {
-    //             // --- CREATE NEW SOLDIER ---
-    //             // Ensure we hit the base URL: http://localhost:8080/api/soldiers
-    //             await axios.post(BACKEND_URL, formData);
-    //             console.log("Response from server:", response.data);
-    //         } else {
-    //             // --- UPDATE EXISTING SOLDIER ---
-    //             // Hits: http://localhost:8080/api/soldiers/{id}
-    //             await axios.put(`${BACKEND_URL}/${formData.id}`, formData);
-    //         }
-    //
-    //         await fetchSoldiers(); // Refresh the list
-    //         alert(isNewSoldier ? 'Soldier added successfully!' : 'Changes saved successfully!');
-    //         setIsModalOpen(false);
-    //     } catch (error) {
-    //         console.error('Save failed:', error);
-    //         const errorMsg = error.response?.data?.message || error.message;
-    //         alert('Network or server error: ' + errorMsg);
-    //     }
-    // };
+
     const handleSave = async (formData) => {
         const isNewSoldier = !formData.id;
         try {

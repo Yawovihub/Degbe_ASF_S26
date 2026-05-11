@@ -426,7 +426,7 @@ const SoldierDashboard = ({ soldier, onBack, onEdit, onUploadSuccess, fetchSoldi
                                     soldierId={soldier?.soldier_id||soldier?.id||soldier?.soldierId}
                                     onSuccess={fetchSoldierData} // This triggers the refresh we set up earlier
                                 />
-                                <CounselingHistory counselings={soldier.counselings} />
+                                <CounselingHistory counselings={soldier?.counseling_history} />
                             </div>
                         </div>
                     </div>
