@@ -1,0 +1,16 @@
+services:
+  postgres-db:
+    container_name: final_capstone_project
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: final_capstone_project
+      POSTGRES_PASSWORD: final_capstone_project11
+      POSTGRES_DB: final_capstone_project
+      POSTGRES_HOST_AUTH_METHOD: password
+    ports:
+      - "5430:5432"
+
+volumes:
+  postgresql_data:
+    driver: local
